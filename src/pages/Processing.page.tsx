@@ -2,11 +2,11 @@ import { IconFingerprint, IconGauge, IconHome2 } from '@tabler/icons-react'
 import { AppShell, AppShellNavbar, Burger, Group, NavLink } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 
-export function HomePage() {
+export function ProcessingPage() {
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true)
 
   return (
-    <div>Home</div>
+    <div>Processing</div>
   )
 }
