@@ -4,7 +4,21 @@ import {
   default as CycleCountPage,
   default as HomePage,
 } from '@/pages/HomePage'
+import { Home, Person } from '@mui/icons-material'
+import { Navigation } from '@toolpad/core/AppProvider'
 import { createBrowserRouter } from 'react-router-dom'
+
+const navigation: Navigation = [
+  {
+    title: 'Home',
+    icon: <Home />,
+  },
+  {
+    segment: 'users',
+    title: 'Users',
+    icon: <Person />,
+  },
+]
 
 const router = createBrowserRouter([
   {
@@ -28,4 +42,4 @@ const router = createBrowserRouter([
   },
 ])
 
-export { router }
+export { navigation, router }
