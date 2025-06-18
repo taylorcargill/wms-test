@@ -1,13 +1,28 @@
-import '@mantine/core/styles.css';
+import { Home, Person } from '@mui/icons-material'
+import type { Navigation } from '@toolpad/core/AppProvider'
+import { ReactRouterAppProvider } from '@toolpad/core/react-router'
+import { Outlet } from 'react-router'
 
-import { MantineProvider } from '@mantine/core';
-import { theme } from './theme';
-import { Navigation } from './pages/Navigation.page';
+const NAVIGATION: Navigation = [
+  {
+    title: 'Home',
+    icon: <Home />,
+  },
+  {
+    segment: 'users',
+    title: 'Users',
+    icon: <Person />,
+  },
+]
+
+const BRANDING = {
+  title: 'WMS',
+}
 
 export default function App() {
   return (
-    <MantineProvider theme={theme}>
-      <Navigation />
-    </MantineProvider>
-  );
+    <ReactRouterAppProvider navigation={NAVIGATION} branding={BRANDING}>
+      <Outlet />
+    </ReactRouterAppProvider>
+  )
 }
